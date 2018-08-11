@@ -17,13 +17,13 @@ security:
 # and token store
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/auth
-    username: root
-    password: password
-    driver-class: com.mysql.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/auth_service
+    username: auth_service
+    password: 12345678Aa
+    driver-class: org.postgresql.Driver
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     show-sql: false
     hibernate:
       ddl-auto: create
@@ -39,4 +39,4 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://192.168.59.103:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
